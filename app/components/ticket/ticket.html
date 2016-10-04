@@ -1,0 +1,135 @@
+<!-- content starts here-->
+<div class="content-wrapper">
+    <!--ticketDetailController starts here-->
+    <div ng-controller="ticketDetailController">
+        <!--automatically updated sub-navigation-->
+        <section class="subnavi">
+            <div class="subnavi-font">
+                <i class="material-icons md-36 md-red" onClick="history.go(-1);return true;">navigate_before</i>
+                <p class="inline">{{bName}} ||
+                    {{ticket.name}}</p>
+            </div>
+        </section>
+
+        <!--ticket navigation starts here-->
+        <div class="grid-wrap">
+            <div class="grid-col bp1-col-one">
+                <!--START navigation to change the view or add a ticket-->
+                <div class="kanban-navi">
+                    <a href="#!/kanbanBoard/{{bId}}/{{bName}}/edit/{{tId}}"><p>edit</p></a>&nbsp;
+                    <i class="material-icons md-24 md-black">edit</i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p ng-click="change_detail()">change&nbsp;details</p>&nbsp;
+                    <i class="material-icons md-24 md-black" ng-click="assignee()">assignment_ind</i>
+                </div>
+                <hr>
+                <!--END navigation to change the view or add a ticket-->
+            </div>
+
+
+            <!--START left Side of data shown-->
+            <div class="grid-col bp1-col-one-half">
+                <p class="detail-heading">Details</p>
+                <div class="detail_info">
+                    <table>
+                        <tr>
+                            <td class="first_col">Components:</td>
+                            <td class="second_col">{{ticket.components}}</td>
+                        </tr>
+                        <tr>
+                            <td class="first_col">Status:</td>
+                            <td class="second_col" ng-hide="change_info">{{ticket.status}}</td>
+                            <td class="second_col" ng-show="change_info">
+                                <select class="select_small" name="status" ng-model='ticketData.status'
+                                        ng-options="status as status.name for status in ticketStatus track by status.id"
+                                        ng-change="updateStatus(ticketData.status.id)">
+                                    <option value="" disabled selected>select the status</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first_col">Assignee:</td>
+                            <td class="second_col" ng-hide="change_info">{{ticket.assigned_user.name}}</td>
+                            <td class="second_col" ng-show="change_info">
+                                <select class="select_small" name="assignee" ng-model='ticketData.assignee'
+                                        ng-change="updateAssignee(ticketData.assignee.id)"
+                                        ng-options="assignee as assignee.name for assignee in availableUsers track by assignee.id">
+                                    <option value="" disabled selected>select a assignee</option>
+                                    <!--<option ng-repeat="user in availableUsers" ng-model='ticketData.assignee'>-->
+                                    <!--{{user.name}}-->
+                                    <!--</option>-->
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--END left Side of data shown-->
+
+            <!--START right Side of data shown-->
+            <div class="grid-col bp1-col-one-half">
+                <p class="detail-heading">Date</p>
+                <div class="detail_info">
+                    <table>
+                        <tr>
+                            <td class="first_col">Create Date:</td>
+                            <td class="second_col">{{ticket.created_at | date: 'dd.MM.yyyy'}}</td>
+                        </tr>
+                        <tr>
+                            <td class="first_col">Update Date:</td>
+                            <td class="second_col">{{ticket.updated_at | date: 'dd.MM.yyyy'}}</td>
+                        </tr>
+                        <tr>
+                            <td class="first_col">Due Date:</td>
+                            <td class="second_col">{{ticket.due_date | date: 'dd.MM.yyyy'}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--END right Side of data shown-->
+
+            <!--START full Side of description shown-->
+            <div class="grid-col bp1-col-full">
+                <br><br>
+                <hr>
+                <p class="detail_heading_full">Description</p>
+                <div class="detail_info_full" ng-bind-html="ticket.description"></div>
+            </div>
+            <!--END full Side of description shown-->
+
+        </div>
+        <!--ticket navigation ends here-->
+    </div>
+    <!--ticketDetailController ends here-->
+
+
+    <!--COMMENT PART-->
+    <!-- commentController starts here-->
+    <div class="grid-wrap" ng-controller="commentController">
+        <div class="grid-col bp1-col-full">
+            <br><br>
+            <hr>
+            <!--show comments for Ticket-->
+            <p class="detail_heading_full">Comments</p>
+            <p class="comment_message">leave your comments here!</p>
+            <div class="detail_info_full" ng-repeat="comment in comments"><br>{{comment.assigned_user.name}} at
+                {{comment.created_at | date: "dd.MM.yyyy - hh:mm"}}
+                <div class="comment" ng-bind-html="comment.comment"></div>
+                <br>
+            </div>
+
+            <!--write comment for ticket-->
+            <form ng-submit="submitComment()">
+                <div text-angular="text-angular" class="text-comment" ta-disabled='disabled'
+                     ng-model='commentData.comment'
+                     ta-toolbar="[['h1','h2','p','pre','quote','bold','underline','italics','ul','ol',]]">
+
+                </div>
+                <br>
+                <button type="submit" class="button">add</button>
+            </form>
+        </div>
+    </div>
+    <!--Comment Part -> commentController ends here-->
+</div>
+<!--content wrapper ends here-->

@@ -1,0 +1,136 @@
+<!-- content starts here-->
+<div class="content-wrapper">
+    <!--kanbanBoardController starts here-->
+    <div ng-controller="kanbanBoardController">
+        <!--automatically updated subnavigation-->
+        <section class="subnavi">
+            <div class="subnavi-font">
+                <i class="material-icons md-36 md-red" onClick="history.go(-1);return true;">terrain</i>
+                <p>{{bName}}</p>
+            </div>
+        </section>
+
+
+        <div class="grid-wrap">
+            <div class="grid-col bp1-col-one">
+                <!--START navigation to change the view or add a ticket-->
+                <div class="kanban-navi">
+                    <a href="#!/kanbanBoard/{{bId}}/{{bName}}/add"><p>add&nbsp;ticket</p></a>&nbsp;
+                    <i class="material-icons md-24 md-black">edit</i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p ng-click="archive()" ng-hide="archive_board">with&nbsp;archive&nbsp;</p>
+                    <p ng-click="archive()" ng-show="archive_board">without&nbsp;archive&nbsp;</p>
+                    <i class="material-icons md-24 md-black">archive</i>
+                </div>
+                <hr>
+                <!--END navigation to change the view or add a ticket-->
+            </div>
+
+            <!--START kanban view status for component-->
+            <div ng-repeat="(component, ticketsByStatus) in tickets">
+                <!--show icons for component with and without kanban view -->
+                <p class="heading-component" ng-click="toggle(component)" ng-hide="{{component}}">
+                    <i class="material-icons md-18 md-black">keyboard_arrow_down</i>{{component}}
+                </p>
+                <p class="heading-component" ng-click="toggle(component)" ng-show="{{component}}">
+                    <i class="material-icons md-18 md-black">keyboard_arrow_right</i>{{component}}
+                </p>
+                <!--START show component with and without kanban view-->
+                <div class="grid-col bp1-col-full" ng-hide="{{component}}">
+
+
+                    <!--show column BACKLOG-->
+                    <div class="grid-col-kanban bp1-col-one-half bp2-col-one-fifth" ng-hide="archive_board">
+                        <p class="kanban-text">Backlog</p>
+                        <div class="kanban-backlog">
+                            <a ng-repeat="ticket in ticketsByStatus['BACKLOG']"
+                               href="#!/kanbanBoard/{{bId}}/{{bName}}/ticket/{{ticket.id}}">
+                                <button type="text" name="project">
+                                    <p class="kanban-title">{{ticket.name}}</p>
+                                    <p class="kanban-description">{{ticket.assigned_user.name}}</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--show column To Do-->
+                    <div class="grid-col-kanban bp1-col-one-half bp2-col-one-fifth">
+                        <p class="kanban-text">To Do</p>
+                        <div class="kanban-do">
+                            <a ng-repeat="ticket in ticketsByStatus['TO_DO']"
+                               href="#!/kanbanBoard/{{bId}}/{{bName}}/ticket/{{ticket.id}}">
+                                <button type="text" name="project">
+                                    <p class="kanban-title">{{ticket.name}}</p>
+                                    <p class="kanban-description">{{ticket.assigned_user.name}}</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--show column In Progress-->
+                    <div class="grid-col-kanban bp1-col-one-half bp2-col-one-fifth">
+                        <p class="kanban-text">In Progress</p>
+                        <div class="kanban-progress">
+                            <a ng-repeat="ticket in ticketsByStatus['IN_PROGRESS']"
+                               href="#!/kanbanBoard/{{bId}}/{{bName}}/ticket/{{ticket.id}}">
+                                <button type="text" name="project">
+                                    <p class="kanban-title">{{ticket.name}}</p>
+                                    <p class="kanban-description">{{ticket.assigned_user.name}}</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--show column In Test-->
+                    <div class="grid-col-kanban bp1-col-one-half bp2-col-one-fifth">
+                        <p class="kanban-text">In Test</p>
+                        <div class="kanban-test">
+                            <a ng-repeat="ticket in ticketsByStatus['IN_TEST']"
+                               href="#!/kanbanBoard/{{bId}}/{{bName}}/ticket/{{ticket.id}}">
+                                <button type="text" name="project">
+                                    <p class="kanban-title">{{ticket.name}}</p>
+                                    <p class="kanban-description">{{ticket.assigned_user.name}}</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--show column Done-->
+                    <div class="grid-col-kanban bp1-col-one-half bp2-col-one-fifth">
+                        <p class="kanban-text">Done</p>
+                        <div class="kanban-done">
+                            <a ng-repeat="ticket in ticketsByStatus['DONE']"
+                               href="#!/kanbanBoard/{{bId}}/{{bName}}/ticket/{{ticket.id}}">
+                                <button type="text" id="project" name="project">
+                                    <p class="kanban-title">{{ticket.name}}</p>
+                                    <p class="kanban-description">{{ticket.assigned_user.name}}</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--show column Archive-->
+                    <div class="grid-col-kanban bp1-col-one-half bp2-col-one-fifth" ng-show="archive_board">
+                        <p class="kanban-text">Archive</p>
+                        <div class="kanban-archive">
+                            <a ng-repeat="ticket in ticketsByStatus['ARCHIVE']"
+                               href="#!/kanbanBoard/{{bId}}/{{bName}}/ticket/{{ticket.id}}">
+                                <button type="text" name="project">
+                                    <p class="kanban-title">{{ticket.name}}</p>
+                                    <p class="kanban-description">{{ticket.assigned_user.name}}</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!--END show component with and without kanban view-->
+
+            </div>
+            <!--END kanban view status for component-->
+
+        </div>
+    </div>
+    <!--kanbanBoardController end here-->
+</div>
+<!-- content ends here-->

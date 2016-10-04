@@ -1,0 +1,78 @@
+<!-- content starts here-->
+<div class="content-wrapper">
+    <!--automatically updated sub-navigation-->
+    <section class="subnavi">
+        <div class="subnavi-font">
+            <i class="material-icons md-36 md-red" onClick="history.go(-1);return true;">add_circle</i>
+            <p>Ticket</p>
+        </div>
+    </section>
+
+    <!-- START ticket insert container-->
+    <div class="grid-wrap">
+        <!--START ticketController-->
+        <div class="grid-col bp1-col-one" ng-controller="addTicketController">
+
+            <!--START form for submit Ticket-->
+            <form name="addTicket" ng-submit="submitTicket()">
+
+                <!--input ticket name-->
+                <div class="group">
+                    <input type="text" name="name" ng-model='ticketData.name' ng-maxlength="50" required
+                           class="required"/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>name</label>
+                    <p class="error" ng-show="addTicket.name.$error.maxlength">the ticket name shouldn't be longer than
+                        50 characters!</p>
+                </div>
+
+                <!--input ticket component-->
+                <div class="group">
+                    <input class="lowercase" name="components" type="text" ng-model='ticketData.components'
+                           ng-maxlength="50" required class="required"/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>components</label>
+                    <p class="error" ng-show="addTicket.components.$error.maxlength">the component shouldn't be longer
+                        than 50 characters!</p>
+                </div>
+
+                <!--input due date-->
+                <div class="group">
+                    <label>due date</label><br>
+                    <input type="date" ng-model="ticketData.due_date" required class="required"/>
+                </div>
+
+                <!--input assignee-->
+                <div class="group"><br><br>
+                    <label>assignee</label>
+                    <select name="assignee" ng-model='ticketData.assignee' required class="required">
+                        <option disabled selected>{{ticketData.assigned_user.name}}</option>
+                        <option ng-repeat="user in availableUsers" ng-model='ticketData.assignee' value="{{user.id}}">
+                            {{user.name}}
+                        </option>
+                    </select>
+                </div>
+
+                <!--using the text-editor textAngular cf. https://github.com/fraywing/textAngular-->
+                <!--input description-->
+                <div class="group">
+                    <label>description</label><br><br>
+                    <div text-angular="text-angular" ta-disabled='disabled' ng-model='ticketData.description'
+                         ta-toolbar="[['h1','h2','h3','p','pre','quote','bold','underline','italics','strikeThrough','undo','redo', 'ul','ol','justifyLeft', 'justifyCenter', 'justifyRight','insertLink','html']]"
+                         required class="required">
+                    </div>
+                </div>
+                <!--save ticket input-->
+                <button type="submit" class="button">add</button>
+
+            </form>
+            <!--END form for submit Ticket-->
+        </div>
+        <!--END ticketController-->
+    </div>
+    <!-- END ticket insert container-->
+</div>
+<!-- content ends here-->
+

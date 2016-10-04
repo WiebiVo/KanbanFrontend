@@ -1,0 +1,962 @@
+/* app css stylesheet Wiebke*/
+
+/*MATERIAL ICONS*/
+/*https://design.google.com/icons/*/
+/*size material icons*/
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+/*material icons white and black*/
+.material-icons.md-dark {
+    color: black;
+}
+
+.material-icons.md-red {
+    color: #d8ae00;
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light:hover {
+    color: #d8ae00;
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/*_______________________________________________________________*/
+
+/*HOME DESIGN*/
+
+body {
+    font-family: 'Source Sans Pro';
+    background-color: #f8f8f8;
+}
+
+h1 {
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+h2 {
+    font-size: 15px;
+    color: #1a1a1a;
+}
+
+h3 {
+    font-size: 11px;
+    color: #1a1a1a;
+}
+
+p {
+    font-size: 15px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(62, 62, 62);
+}
+
+hr{
+    color: #d9d9d9;
+}
+
+/*transform input text to lowercase*/
+.lowercase {
+    text-transform: lowercase;
+}
+
+.error{
+    margin-top: 1px;
+    font-size:11px;
+    color: #ff3333;
+}
+
+/*_______________________________________________________________*/
+
+/*NAVIGATION*/
+.navi {
+    background-color: black;
+    position: relative;
+    left: 0px;
+    top: -1px;
+    width: 100%;
+    height: 90px;
+    z-index: 7;
+}
+
+.navi-button#dashboard {
+    padding: 20px 75px;
+    float: left;
+}
+
+.navi-button#exit {
+    padding: 20px 75px;
+    float: right;
+}
+
+
+/*_______________________________________________________________*/
+
+/*CONTENT-PART*/
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    max-width: 95%;
+    min-height: 580px;
+    margin: -15px auto 50px;
+    padding: 30px;
+}
+
+
+/*_______________________________________________________________*/
+
+
+/*SUB-NAVIGATION*/
+/*automatically updated sub-navigation*/
+.subnavi {
+    height: 25px;
+}
+
+.subnavi-font {
+    height: 25px;
+    position: absolute;
+    padding: 6px;
+    margin-left: 10px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.subnavi-font p {
+    display: inline;
+    font-size: 20px;
+    vertical-align: 10px;
+}
+
+/*_______________________________________________________________*/
+
+
+/*DASHBOARD */
+/*automatically updated project-tile*/
+.project-button {
+    padding-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.project-button button[type=text] {
+    text-align: center;
+    background-color: #d8ae00;
+    border: solid 10px;
+    border-color: #d8ae00;
+    width: 320px;
+    max-width: 100%;
+    height: 160px;
+    z-index: 158;
+}
+
+.project-button button[type="text"]:hover {
+    color: #000000;
+    text-decoration: none;
+    border-color: #d8ae00;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: 0 100%;
+}
+
+.project-button button p{
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.project-button button:hover p{
+    color: black;
+    font-weight: 500;
+}
+
+.project-button button[type="text"]:focus {
+    outline: none;
+}
+
+/*_______________________________________________________________*/
+
+
+/*DASHBOARD */
+/*create-tile*/
+.create-button {
+    padding-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.create-button button[type=text] {
+    text-align: center;
+    background-color: black;
+    border: solid 10px;
+    border-color: black;
+    width: 320px;
+    max-width: 100%;
+    height: 160px;
+    z-index: 158;
+}
+
+.create-button button p{
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.create-button button[type="text"]:hover {
+    color: #000000;
+    text-decoration: none;
+    border-color: black;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: 0 100%;
+}
+
+.create-button button:hover p{
+    color: black;
+    font-weight: 500;
+}
+
+.create-button button[type="text"]:focus {
+    outline: none;
+}
+
+.create-button .message a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/*_______________________________________________________________*/
+
+/*KANBAN */
+/*kanban-navi*/
+.kanban-navi {
+    display: inline-flex;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+
+.kanban-navi p {
+    font-size: 13px;
+    margin-top: 0.5%;
+    margin-right: 2%;
+}
+
+/*Heading for Copmponents*/
+.heading-component {
+    display: inline-flex;
+    margin-left: 3%;
+    margin-top: 2%;
+    font-size: 17px;
+    text-transform: uppercase;
+
+}
+
+
+.kanban-text{
+    text-align: center;
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+.kanban {
+    min-height: 100px;
+    position: relative;
+}
+
+.kanban-backlog{
+    background-color: #ffec9d;
+    min-height: 100px;
+    position: relative;
+}
+.kanban-do{
+    background-color: #ffdd4e;
+    min-height: 100px;
+    position: relative;
+}
+.kanban-progress{
+    background-color: #ffce00;
+    min-height: 100px;
+    position: relative;
+}
+.kanban-test{
+    background-color: #d8b627;
+    min-height: 100px;
+    position: relative;
+}
+.kanban-done{
+    background-color: #b19e4e;
+    min-height: 100px;
+    position: relative;
+}
+.kanban-archive{
+    background-color: #898676;
+    min-height: 100px;
+    position: relative;
+}
+
+.kanban-title{
+    text-align: center;
+    font-size: 13px;
+    margin-top: 2%;
+    text-transform: uppercase;
+}
+
+.kanban-description{
+    text-align: center;
+    font-size: 11px;
+    color: #d8ae00;
+    text-transform: lowercase;
+}
+
+button[type=text] {
+    margin: 5%;
+    min-height: 60px;
+    width: 90%;
+    background-color: white;
+    border-style: none;
+}
+
+button[type="text"]:hover {
+    text-decoration: none;
+    border: solid 5px;
+    border-color: #d8ae00;
+    background: white;
+}
+
+button[type="text"]:focus {
+    outline: none;
+}
+
+/*_______________________________________________________________*/
+
+/*TICKET VIEW */
+
+/*hidden selection for change assignee | status*/
+.select_small {
+    width: 300px;
+    height: 30px;
+    max-width: 100%;
+    font-size: 11px;
+    border: 1px solid rgb(236, 239, 241);
+    padding: .75em 1em .5em 1em;
+    background-color: white;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+/*ticket-detailseite */
+.detail_info {
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 13px;
+    text-transform: lowercase;
+}
+
+.detail_info_full {
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 13px;
+}
+
+.detail-heading {
+    padding-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #d8ae00;
+    text-transform: uppercase;
+}
+
+.detail_heading_full {
+    margin-left: 2%;
+    margin-right: 5%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #d8ae00;
+    text-transform: uppercase;
+}
+
+/*Table for data shown*/
+table {
+    width: 100%;
+
+}
+
+table, td {
+    border: none;
+}
+
+td {
+    padding-bottom: 2px;
+    text-align: left;
+}
+
+.first_col {
+    width: 40%;
+}
+
+.second_col {
+    width: 60%;
+}
+
+
+/*_______________________________________________________________*/
+
+/*TICKET VIEW - COMMENT */
+
+.comment {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 70%;
+}
+
+.text-comment{
+    margin-top: -50px;
+    width: 70%;
+}
+
+.comment_message{
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 13px;
+    color: #898676;
+}
+
+/*_______________________________________________________________*/
+
+
+/*ADD BOARD | ADD TICKET */
+/*form style*/
+form {
+    padding-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/*insert mask style*/
+.group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/*style input fields*/
+input {
+    font-size: 13px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(236, 239, 241);
+}
+
+.more_input {
+    width: 600px;
+    max-width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+/*label*/
+label {
+    color: #999;
+    font-size: 15px;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.label-active-one{
+    top: -10px;
+    font-size: 13px;
+    color: #d8ae00;
+}
+
+.label-active-second{
+    top: 10px;
+    font-size: 13px;
+    color: #d8ae00;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 13px;
+    color: #d8ae00;
+}
+
+/*hightlighter*/
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/*animation*/
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #d8ae00;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #d8ae00;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #d8ae00;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+/* remove standard-styles */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    font-size: 1em;
+}
+
+/* styling */
+select {
+    width: 300px;
+    max-width: 100%;
+    font-size: 13px;
+    border: 1px solid rgb(236, 239, 241);
+    padding: .75em 1em .5em 1em;
+    background-color: white;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    border: 1px solid #d8ae00;
+    outline: none;
+}
+
+select:hover {
+    border: 1px solid #d8ae00;
+}
+
+.show_description{
+   height:100px;
+}
+
+/*_______________________________________________________________*/
+
+
+/* FOOTER*/
+.footer-wrapper {
+    background-color: black;
+    height: 5%;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-button#copyright {
+    padding: 5px 75px;
+    float: left;
+}
+
+.footer-font {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 300px;
+}
+
+textarea {
+    border-color: rgb(236, 239, 241);
+    width: 450px;
+    max-width: 100%;
+    height: 100px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+/*_______________________________________________________________*/
+
+
+/*BUTTONS*/
+.button {
+    font-size: 13px;
+    text-align: center;
+    background-color: white;
+    border: solid 1.5px;
+    border-color: rgb(236, 239, 241);
+    width: 150px;
+    max-width: 70%;
+    padding: 8px;
+    z-index: 158;
+}
+
+.button:hover {
+    color: #000000;
+    text-decoration: none;
+    border-color: #d8ae00;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: 0 100%;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+#add_field_button {
+    color: #d8ae00;
+}
+
+#remove_field {
+    color: #d8ae00;
+    padding: 0.4%;
+}
+
+/*_______________________________________________________________*/
+
+
+/*TEXTANGULAR STYLE*/
+
+.ta-editor {
+    min-height: 300px;
+    overflow: auto;
+    font-size: 13px;
+    box-shadow: none !important;
+    border: 1px solid #EEE;
+    border-raidus: 3px !important;
+}
+
+.ta-toolbar .btn {
+    border-radius: 0;
+    border: 1px solid #f8f8f8;
+    padding: 10px;
+    min-width: 50px;
+    background-color: #fff;
+    font-size: 11px;
+}
+
+[text-angular] {
+    position: relative;
+}
+
+.ta-toolbar {
+    right: 0;
+}
+
+@media all and (max-width: 699px) {
+    .ta-toolbar {
+        position: absolute;
+    }
+
+    .ta-editor {
+        padding-top: 30px;
+    }
+}
+
+@media all and (max-width: 250px) {
+    .ta-toolbar {
+        display: none;
+    }
+}
+
+.ta-toolbar .btn-group {
+    margin: 0 !important;
+    /*box-shadow : 0 1px 3px rgba(0,0,0,0.2);*/
+}
+
+/*_______________________________________________________________*/
+
+
+/* Grid starts here*/
+/*https://github.com/mattberridge/Proportional-Grids/blob/master/index.html*/
+/*-- Use this wrapper if you want to divide your columns -- */
+.divide-bottom {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+/* -- Use this wrapper if you want to block-out a column with padding
+Taken from http://csswizardry.com/2011/10/the-island-object/) -- */
+.island {
+    padding: 1.5em;
+    background-color: #ececec;
+}
+
+.island :last-child {
+    margin-bottom: 0;
+}
+
+/* -- Setup grids with base class -- */
+.grid-wrap {
+    margin-left: -3em;
+    overflow: hidden;
+    clear: both;
+}
+
+.grid-col {
+    float: left;
+    padding-left: 3em;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid-col-kanban {
+    float: left;
+    padding-left: 1em;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.large-gutter {
+    margin-left: -6em;
+}
+
+.large-gutter .grid-col {
+    padding-left: 6em;
+}
+
+.half-gutter {
+    margin-left: -1.5em;
+}
+
+.half-gutter .grid-col {
+    padding-left: 1.5em;
+}
+
+.no-gutter {
+    margin-left: 0;
+}
+
+.no-gutter .grid-col {
+    padding-left: 0;
+}
+
+.reset-gutter {
+    margin-left: -3em;
+}
+
+.reset-gutter .grid-col {
+    padding-left: 3em;
+}
+
+ul.grid-wrap,
+ol.grid-wrap {
+    padding-left: 0;
+    list-style: none;
+}
+
+li.grid-col {
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.col-full,
+.col-set-full .grid-col {
+    width: 100%;
+}
+
+.col-one-half,
+.col-set-one-half .grid-col {
+    width: 50%;
+}
+
+.col-one-third,
+.col-set-one-third .grid-col {
+    width: 33.333%;
+}
+
+.col-one-quarter,
+.col-set-one-quarter .grid-col {
+    width: 25%;
+}
+
+.col-two-thirds {
+    width: 66.666%;
+}
+
+.col-three-quarters {
+    width: 75%;
+}
+
+/* -- Breakpoint (.bp1)
+------------------------------------------------------------- */
+@media only screen and (min-width: 30em) {
+    .bp1-col-full,
+    .bp1-col-set-full .grid-col {
+        width: 100%;
+    }
+
+    .bp1-col-one-half,
+    .bp1-col-set-one-half .grid-col {
+        width: 50%;
+    }
+
+    .bp1-col-one-third,
+    .bp1-col-set-one-third .grid-col {
+        width: 33.333%;
+    }
+
+    .bp1-col-one-quarter,
+    .bp1-col-set-one-quarter .grid-col {
+        width: 25%;
+    }
+
+    .bp1-col-two-thirds {
+        width: 66.666%;
+    }
+
+    .bp1-col-three-quarters {
+        width: 75%;
+    }
+}
+
+/* -- Breakpoint 2 (.bp2)
+------------------------------------------------------------- */
+@media only screen and (min-width: 48em) {
+    .bp2-col-full,
+    .bp2-col-set-full .grid-col {
+        width: 100%;
+    }
+
+    .bp2-col-one-half,
+    .bp2-col-set-one-half .grid-col {
+        width: 50%;
+    }
+
+    .bp2-col-one-third,
+    .bp2-col-set-one-third .grid-col {
+        width: 33.333%;
+    }
+
+    .bp2-col-one-quarter,
+    .bp2-col-set-one-quarter .grid-col {
+        width: 25%;
+    }
+
+    .bp2-col-one-fifth,
+    .bp2-col-set-one-fifth .grid-col {
+        width: 20%;
+    }
+
+
+    .bp2-col-two-thirds {
+        width: 66.666%;
+    }
+
+    .bp2-col-three-quarters {
+        width: 75%;
+    }
+}
+
+/* -- Breakpoint 3 (.bp3)
+------------------------------------------------------------- */
+@media only screen and (min-width: 60em) {
+    .bp3-col-full,
+    .bp3-col-set-full .grid-col {
+        width: 100%;
+    }
+
+    .bp3-col-one-half,
+    .bp3-col-set-one-half .grid-col {
+        width: 50%;
+    }
+
+    .bp3-col-one-third,
+    .bp3-col-set-one-third .grid-col {
+        width: 33.333%;
+    }
+
+    .bp3-col-one-quarter,
+    .bp3-col-set-one-quarter .grid-col {
+        width: 25%;
+    }
+
+    .bp3-col-two-thirds {
+        width: 66.666%;
+    }
+
+    .bp3-col-three-quarters {
+        width: 75%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+/* Grid starts here*/
+/*_______________________________________________________________*/

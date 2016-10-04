@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="teamWork" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="teamWork" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="teamWork" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="teamWork" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TeamWork</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <!--textAngular style-->
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css">
+    <!--login und app style-->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <!--icon and font style-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+<!-- navigation starts-->
+<section class="navi" ng-show="showHeaderFooter">
+    <div id="dashboard" class="navi-button">
+        <a href="#!/dashboard"><i class="material-icons md-48 md-light">dashboard</i></a>
+    </div>
+
+    <div id="exit" class="navi-button" ng-controller="authenticateController">
+        <a ng-click="logout()"><i class="material-icons md-48 md-light">exit_to_app</i></a>
+    </div>
+</section>
+<!-- navigation ends in view-->
+
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!--start loading components-->
+<div ng-view></div>
+<!--end loading components-->
+
+
+<!-- footer starts here -->
+<div class="footer-wrapper" ng-show="showHeaderFooter">
+    <div id="copyright" class="footer-button">
+        <div class="footer-font">© 2016. All rights Reserved.</div>
+    </div>
+</div>
+<!-- footer ends here -->
+
+<!--include bower components-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-environment/dist/angular-environment.js"></script>
+<script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+<script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+<script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/satellizer/satellizer.min.js"></script>
+<script src="bower_components/angular-websocket/dist/angular-websocket.min.js"></script>
+<!--include main app.js-->
+<script src="app.js"></script>
+<!--include javascript for components-->
+<script src="components/login/login.js"></script>
+<script src="components/dashboard/dashboard.js"></script>
+<script src="components/kanbanBoard/kanbanBoard.js"></script>
+<script src="components/ticket/ticket.js"></script>
+<script src="components/updateTicket/updateTicket.js"></script>
+<script src="components/addBoard/addBoard.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+<!--include javascript for services-->
+<script src="services/commentService.js"></script>
+<script src="services/boardService.js"></script>
+<script src="services/ticketService.js"></script>
+<script src="services/userService.js"></script>
+<script src="services/messageFactory.js"></script>
+
+</body>
+</html>

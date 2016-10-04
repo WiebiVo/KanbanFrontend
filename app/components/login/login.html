@@ -1,0 +1,24 @@
+<!--login screen starts here -->
+<div class="login-wrapper">
+    <div class="info">
+        <h1>TeamWork</h1>
+    </div>
+</div>
+<div class="form" ng-controller="authenticateController">
+    <div class="thumbnail"><i class="material-icons md-48 md-light">create</i></div>
+    <form class="register-form" ng-submit="submitUser()" ng-show="checked">
+        <input type="text" placeholder="name" ng-model="userData.name" required/>
+        <input type="email" placeholder="email address" ng-model="userData.email" required/>
+        <input type="password" placeholder="password" ng-model="userData.password" required/>
+        <button type="submit">create</button>
+        <p class="message">Already registered?<input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><a>
+            Sign In</a></p>
+    </form>
+    <form class="login-form" ng-hide="checked">
+        <input type="email" placeholder="email address" ng-model="email" required/>
+        <input type="password" name="password" placeholder="password" ng-model="password" required/>
+        <button ng-click="login()">login</button>
+        <p class="message ">Not registered?<input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><a>
+            Create an account</a></p>
+    </form>
+</div>

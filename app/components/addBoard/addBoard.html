@@ -1,0 +1,65 @@
+<!-- content starts here-->
+<div class="content-wrapper">
+    <!--automatically updated subnavigation-->
+    <section class="subnavi">
+        <div class="subnavi-font">
+            <i class="material-icons md-36 md-red" onClick="history.go(-1);return true;">add_circle</i>
+            <p>Board</p>
+        </div>
+    </section>
+
+    <!-- START board insert container-->
+    <div class="grid-wrap">
+        <!--START BoardController-->
+        <div class="grid-col bp1-col-one" ng-controller="boardController">
+
+            <!--START form for submit Board-->
+            <form name="addBoard" ng-submit="submitBoard()">
+
+                <!--add board name-->
+                <div class="group">
+                    <input type="text" name="name" ng-model='boardData.name' ng-maxlength="50" required
+                           class="required"/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>name</label>
+                    <p class="error" ng-show="addBoard.name.$error.maxlength">the board name shouldn't be longer than 50
+                        characters!</p>
+                </div>
+
+                <!--add board members-->
+                <div class="group" id="add_member"><br><br>
+                    <label>member</label>
+                    <div ng-repeat="member in boardData.members">
+                        <select name="boardData.member" ng-model="boardData.members[$index]"
+                                ng-options="user as user.email for user in users track by user.id" ng-model="id"
+                                required class="required">
+                            <option value="" disabled selected>select members for your board</option>
+                        </select>
+
+                        <!--add and remove button-->
+                        <i id="add_field_button" ng-click="addNewMember()" class="material-icons md-24 add">add</i>
+                        <i ng-show="showRemoveButton && !$first" ng-click="removeMember()" id="remove_field"
+                           class="material-icons md-24 md-black">remove</i>
+                    </div>
+                </div>
+
+                <!--using the text-editor textAngular cf. https://github.com/fraywing/textAngular-->
+                <!--add description-->
+                <div class="group">
+                    <label>description</label><br><br>
+                    <div text-angular="text-angular" ta-disabled='disabled' ng-model='boardData.description'
+                         ta-toolbar="[['h1','h2','h3','p','pre','quote','bold','underline','italics','strikeThrough','undo','redo', 'ul','ol','justifyLeft', 'justifyCenter', 'justifyRight','insertLink','html']]">
+                    </div>
+                </div>
+                <!--save input -->
+                <button type="submit" class="button">add</button>
+
+            </form>
+            <!--END form for submit Board-->
+        </div>
+        <!--END BoardController-->
+    </div>
+    <!-- END board insert container-->
+</div>
+<!-- content starts here-->

@@ -1,0 +1,41 @@
+<!-- content starts here-->
+<div class="content-wrapper">
+    <!--automatically updated sub-navigation-->
+    <section class="subnavi">
+        <div class="subnavi-font">
+            <i class="material-icons md-36 md-dark">dashboard</i>
+            <p>&nbsp;Boards</p>
+        </div>
+    </section>
+
+    <!--dashboardController starts here-->
+    <div class="grid-wrap" ng-controller="dashboardController">
+
+        <!--last tile to create a board starts here-->
+        <div class="grid-col bp1-col-one-half bp2-col-one-third">
+            <div class="create-button">
+                <a href="#!/addBoard">
+                    <button type="text" id="newProject" name="newProject">
+                        <p class="message">create a new Board</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!--last tile to create a board ends here-->
+
+        <!--loop for every board in database-->
+        <div class="grid-col bp1-col-one-half bp2-col-one-third" ng-repeat="board in boards">
+            <div class="project-button">
+                <a href="#!/kanbanBoard/{{board.id}}/{{board.name}}">
+                    <button type="text" name="project">
+                        <p>{{board.name}}</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!--loop ends here-->
+
+    </div>
+    <!--dashboardController ends here-->
+</div>
+<!-- content ends here-->
